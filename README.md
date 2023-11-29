@@ -94,3 +94,31 @@ Setelah android studio dibuka, klik More Actions lalu klik virtual device manage
 ![Gambar 6 Android Studio -  Virtual Device Manager](img/06%20android%20studio%20avd.png)
 
 Gambar 6 Android Studio - Virtual Device Manager
+
+### 3. Pilih Device
+
+Selanjutnya kita diminta untuk memasukan tipe phone
+
+![Gambar 7. Add Device - Select Hardware](img/07%20avd%20add%20device.PNG)
+
+Gambar 7. Add Device - Select Hardware
+
+### 4. Pilih System Image
+
+Setelah itu pilih system image Android. Download bila belum pernah download. Pastikan internet lancar karena akan download file yang besar. Next sampai Virtual Device terbentuk.
+
+![Gambar 8. Pilih System Image](img/08%20choose%20system%20image.PNG)
+
+Gambar 8. Pilih System Image
+
+### 5. Masuk Android Studio, Klik More Actions, Pilih SDK Manager
+
+![Gambar 9. SDK Manager](img/09%20sdk%20manager.png)
+
+Gambar 9. SDK Manager
+
+### 6. Pilih Tab SDK Tools, centang Android SDK Command-line
+
+Kemudian setelah berhasil download, kembali ke terminal kembali untuk check apakah android sdk nya siap untuk di konsumsi.
+
+![Gambar 10. Android Command-line tools](img/10%20command-line%20tools.png)
