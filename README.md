@@ -20,9 +20,77 @@ flutter create project_flutter_pertama
 ```
 
 ![Gambar 1. create project flutter menggunakan terminal](img/01%20flutter%20create.png)
+
 Gambar 1. create project flutter menggunakan terminal
 
 Ingat aturan dalam membuat nama project adalah:
 
 - Semua huruf kecil
 - Bila terdapat lebih dari 1 kata, dihubungkan dengan karakter underscore
+
+### 2. Menggunakan VS Code
+
+Klik
+
+- Windows : ctrl + shift + P
+- Mac: command + shift + P
+
+Lalu pilih, Flutter: New Project
+
+Kemudian enter, pilih folder penyimpanan, lalu ketikan nama project flutter nya: project_flutter_pertama
+
+![Gambar 2. Flutter New Project dari VS Code](img/02%20flutter%20new%20project.PNG)
+
+Gambar 2. Flutter New Project dari VS Code
+
+## Membuka Project Flutter
+
+Untuk cara pertama, untuk membuka project ke visual studio code, maka pertama kita perlu masuk dulu ke folder projectnya dengan perintah:
+
+```bash
+cd project_flutter_pertama
+```
+
+Setelah itu ketik perintah:
+
+```bash
+code .
+```
+
+Lalu enter
+
+Untuk cara kedua, otomatis folder project flutter akan terbentuk dan dibuka oleh vscode
+
+![Gambar 3. Flutter terbuka di VS Code](img/03%20flutter%20open%20vs%20code.PNG)
+
+Gambar 3. Flutter terbuka di VS Code
+
+## Menjalankan Aplikasi Flutter
+
+Untuk menjalankan aplikasi Flutter di sistem operasi android menggunakan emulator, kita perlu memastikan dulu apakah android sdk sudah terinstall di laptop kita. Cara cek nya adalah dengan mengetikan perintah berikut pada terminal:
+
+```bash
+flutter doctor -v
+```
+
+![Gambar 4. Android Toolchain error](img/04%20flutter%20doctor%20error.PNG)
+
+Gambar 4. Android Toolchain error di dalam perintah flutter doctor
+
+Bila android toolchain belum centang hijau, ada beberapa langkah yang perlu dilakukan. Langkahnya sebagai berikut:
+
+### 1. Download Android Studio dan Install
+
+Software android studio bisa anda download dari link dibawah. Setelah selesai download, lalu install. Android studio disini akan menjadi tools untuk me manage android emulator. https://developer.android.com/studio
+
+![Gambar 5. Download Android Studio](img/05%20android%20studio%20download.PNG)
+
+Gambar 5. Download Android Studio
+
+### 2. Buka Android Studio
+
+Setelah android studio dibuka, klik More Actions lalu klik virtual device manager.
+
+![Gambar 6 Android Studio -  Virtual Device Manager](img/06%20android%20studio%20avd.png)
+
+Gambar 6 Android Studio - Virtual Device Manager
