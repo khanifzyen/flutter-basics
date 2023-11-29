@@ -253,3 +253,43 @@ Gambar 22. Struktur file pubspec.lock dan README.md
 Pubspec.lock adalah file yang dihasilkan secara otomatis berdasarkan file .yaml, dan ini hanya menyimpan lebih banyak detail tentang semua dependensi yang kita miliki di project flutter kita. Namun ini file yang bukan kita kerjakan.
 
 README.md ini bisa kita abaikan, bisa juga kita isi sebagai informasi tentang project yang sedang kita bangun. Jadi file ini dapat kita ubah sebagai informasi yang dapat berguna baik developer lain yang berhubungan dengan project flutter ini.
+
+## Flutter Basic Widget
+
+![Gambar 23. Contoh Flutter App](img/23%20contoh%20flutter%20app.PNG)
+
+Gambar 23. Contoh Flutter App
+
+Sebelum mulai membuat layout tampilan aplikasi, sebaiknya kita pahami dulu bagaimana flutter bekerja mengelola berbagai widget menjadi tampilan aplikasi yang tersusun rapi.
+
+![Gambar 24. function main](img/24%20function%20main.PNG)
+
+Gambar 24. function main
+
+Dalam project flutter, kita mempunya main function seperti halnya dart. function ini tidak memiliki kembalian dan tidak memerlukan argument.
+
+Seperti yang pernah kita pelajari, main adalah function yang secara otomatis dijalankan ketika aplikasi mulai dijalankan oleh flutter dan dart. Karena ada di file main.dart, kita tidak boleh mengganti namanya.
+
+![Gambar 25. Struktur Widget](img/25%20struktur%20widget.PNG)
+
+Gambar 25. Struktur Widget
+
+Untuk merubah kode menjadi tampilan dilayar, pertama kita perlu memahami, pada dasarnya tampilan dilayar itu adalah sekumpulan widget.
+
+Flutter adalah tentang widget, dan setiap aplikasi yang kita buat hanya sekumpulan widget dan widget adalah blok penyusun UI yang dapat kita lihat di layar. Lihat yang saya kotakin merah, itu semua adalah widget. Jika disatukan di dalam satu widget, akan menjadi tampilan yang sesuai dengan kebutuhan UI.
+
+Widget juga sering berisi widget lain, seperti list daftar yang berisi daftar item. Seperti yang kita lihat di samping, dimana list navigation bar berisi widget item navigation bar.
+
+Jadi sesungguhnya kita membuat aplikasi flutter kita ini menjadi widget tree, yang memiliki root widget dimana ini merupakan keseluruhan aplikasi kita.
+
+Sehingga apa yang kita lihat di layar adalah widget yang menampung widget lain.
+
+![Gambar 26. Class StatelessWidget](img/25%20class%20widget.PNG)
+
+Gambar 26. Widget MyApp
+
+Karena semua yang ada di flutter adalah widget, yuk sekarang waktunya kita membuat widget kita sendiri.
+
+Untuk membuat widget kita perlu membuat class widget adalah object, dan kita memerlukan class untuk membuat object.
+
+Jadi mari lihat class MyApp baris 7 diatas. Ini adalah contoh class yang nantinya akan menjadi object widget.
