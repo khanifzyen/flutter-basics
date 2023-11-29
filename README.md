@@ -9,9 +9,9 @@ Di Modul ini, kita akan berkenalan dengan flutter basic, seperti bagaimana kita 
 Dalam membuat project flutter ada 2 cara:
 
 1. Menggunakan terminal/cmd,
-2. Menggunakan IDE (VS Code,Android Studio
+2. Menggunakan IDE (VS Code,Android Studio)
 
-### 1. Menggunakan Terimal
+### 1. Menggunakan Terminal
 
 Pertama buka dulu terminalnya, lalu ketikan perintah:
 
@@ -122,3 +122,60 @@ Gambar 9. SDK Manager
 Kemudian setelah berhasil download, kembali ke terminal kembali untuk check apakah android sdk nya siap untuk di konsumsi.
 
 ![Gambar 10. Android Command-line tools](img/10%20command-line%20tools.png)
+
+### 7. Menerima Lisensi Android
+
+Jalankan perintah
+
+```bash
+flutter doctor --android-licenses
+```
+
+Selanjutnya ketik y enter sampai selesai
+
+![Gambar 11. Android Licenses Accepted](img/11%20accept%20android%20licenses.PNG)
+
+Gambar 11. Android Licenses Accepted
+
+### 8. Buka Project yang Sudah Dibuat dengan VS Code
+
+Disini kita akan melihat struktur folder dan pilihan device yang akan kita gunakan.
+
+1. Buka lib/main.dart terlebih dahulu
+
+2. kemudian pilih Device di toolbar (default Windows), nanti akan muncul daftar emulator.
+
+3. Pilih salah satu emulator.
+
+![Gambar 12. Pilih Emulator](img/12%20choose%20avd.png)
+
+Gambar 12. Pilih Emulator
+
+### 9. Pilih Device dan Run aplikasi
+
+Setelah memilih device, kita dapat lanjut dengan cara klik menu Run dilanjut button run without debugging
+
+![Gambar 13. Run Without Debuggnig](img/13%20run%20without%20debugging.png)
+
+Gambar 13. Run Without Debugging
+
+### 10. Aplikasi berhasil dijalankan
+
+Selanjutnya bila tidak ada problem, maka aplikasi akan tampil di emulator yang sebelumnya sudah kita pilih.
+
+![Gambar 14. Aplikasi Berjalan](img/14%20aplikasi%20berjalan.png)
+
+Gambar 14. Aplikasi Berjalan
+
+## Penjelasan File dan Folder Bawaan Flutter
+
+Setelah project terbentuk, kita akan melihat banyak folder dan file yang sudah dibuatkan oleh flutter. Yuk kita bahas file dan folder folder yang sudah di generate tersebut.
+
+Folder, android, ios, linux, macos, web, dan windows adalah folder yang sudah disiapkan khusus oleh flutter supaya aplikasi yang kita buat bisa di jalankan di platform tersebut.
+
+Disini nanti folder platform yang paling penting adalah folder android karena dalam case program flutter engineering kali ini kita hanya akan fokus pada
+development aplikasi android.
+
+![Gambar 15. Struktur Folder Project Flutter](img/15%20struktur%20folder.PNG)
+
+Gambar 15. Struktur Folder Project Flutter
