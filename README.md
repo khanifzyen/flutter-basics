@@ -171,11 +171,85 @@ Gambar 14. Aplikasi Berjalan
 
 Setelah project terbentuk, kita akan melihat banyak folder dan file yang sudah dibuatkan oleh flutter. Yuk kita bahas file dan folder folder yang sudah di generate tersebut.
 
+![Gambar 15. Struktur Folder Project Flutter](img/15%20struktur%20folder.PNG)
+
+Gambar 15. Struktur Folder Project Flutter
+
 Folder, android, ios, linux, macos, web, dan windows adalah folder yang sudah disiapkan khusus oleh flutter supaya aplikasi yang kita buat bisa di jalankan di platform tersebut.
 
 Disini nanti folder platform yang paling penting adalah folder android karena dalam case program flutter engineering kali ini kita hanya akan fokus pada
 development aplikasi android.
 
-![Gambar 15. Struktur Folder Project Flutter](img/15%20struktur%20folder.PNG)
+Folder android sendiri adalah folder yang penting karena didalamnya berisi project android lengkap dimana kita dapat membuatnya tanpa flutter, namun disini nanti flutter sdk akan menggabungkan kode flutter kita ke project android, jadi ketika kode flutter kita dikompilasi ke kode asli, pada dasarnya kode asli itu nanti akan disuntikkan ke dalam folder android untuk menjadi aplikasi asli android.
 
-Gambar 15. Struktur Folder Project Flutter
+Dan untuk itu kita tidak begitu perlu merubah apapun di folder ini, dan sangat jarang sekali kita merubah kecuali ada beberapa penyesuaian konfigurasi yang berkaitan dengan update version dan sebagainya. Ini akan dibahas di materi selanjutnya.
+
+![Gambar 16. Struktur folder .dart_tools dan .idea](img/15%20struktur%20folder%20dart_tool%20dan%20idea.PNG)
+
+Gambar 16. Struktur folder .dart_tools dan .idea
+
+Folder .idea ini menyimpan beberapa konfigurasi untuk android studio. Karena kita nantinya tidak menggunakan android studio untuk editornya, maka kita tidak butuh untuk mengubah apapun di dalam
+folder ini.
+
+Folder .dart_tool sendiri berisi konfigurasi dart package yang di generate oleh flutter. Folder ini pun tidak perlu kita ubah-ubah. Dapat kita abaikan terlebih dahulu.
+
+![Gambar 17. Struktur folder build](img/16%20struktur%20folder%20buiild.PNG)
+
+Gambar 17. Struktur folder build
+
+Folder build ini akan penting karena folder ini nantinya
+akan menampung output dari aplikasi flutter kita.
+Contoh file .apk, .abb, .ipa, .exe hasil build ke tiap
+platform nanti akan berada di folder ini.
+
+![Gambar 18. Struktur folder lib](img/18%20struktur%20folder%20lib.PNG)
+
+Gambar 18. Struktur folder lib
+
+Folder lib ini sangat penting bagi kita karena 99% pekerjaan kita nantinya akan dilakukan di folder ini.
+
+Lib sendiri adalah singkatan dari library dan itu artinya kode dart dan flutter yang kita tulis di dalam lib akan diartikan sebagai library yang akan disuntikan ke dalam kode asli tiap tiap platform.
+
+Jadi folder ini adalah tempat kita menambah semua file dart dan tempat kita menulis kode.
+
+![Gambar 19. Struktur folder test](img/19%20struktur%20folder%20test.PNG)
+
+Gambar 19. Struktur folder test
+
+Folder test untuk saat ini belum terlalu penting, didalam folder ini kita dapat menuliskan test untuk kode kita, yang nantinya dapat dijalankan secara otomatis. Salah satu fungsinya adalah ketika kita ada perubahan yang berkaitan kode yang pernah kita tulis test nya, dan ada impact, maka unit test ini akan memastikan apakah impact itu bermasalah apa tidak.
+
+Ini tentu penting ketika kita mengembangkan aplikasi yang sudah terlalu kompleks.
+
+![Gambar 20. Struktur file project flutter](img/20%20struktur%20file.PNG)
+
+Gambar 20. Struktur file project flutter
+
+.gitignore berisi list folder atau file yang tidak akan ikut masuk kedalam git repository ketika kita push ke repository tersebut.
+
+.metadata file ini untuk melacak properties di dalam project flutter, ini berfungsi sebagai alat flutter dalam menilai kemampuan dan peningkatan dan sebagainya, file ini tidak perlu diapa-apakan.
+
+.analysis_options.yaml berisi konfigurasi untuk melihat statistik analisis kode dart untuk mengecek error, warning, dan linter. Tidak perlu kita apa-apa kan.
+
+Config.json berisi konfigurasi tambahan ketika kita ingin run aplikasi untuk pertama kalinya di dalam proses development.
+
+Project_flutter_pertama.iml file yang dikelola oleh flutter sdk dalam mengelola dipedensi internal dan beberapa pengaturan project. Ini file yang tidak perlu kita ubah.
+
+![Gambar 21. Struktur file pubspec.yaml](img/21%20struktur%20file%20pubspec%20yaml.PNG)
+
+Gambar 21. Struktur file pubspec.yaml
+
+Pubspec.yml merupakan file yang akan sering kita gunakan. File ini yang memungkinan kita untuk mengelola sebagian besar dependensi project kita.
+
+Apa artinya ini?
+
+Artinya anda dapat mengkonfigurasi package pihak ketiga kedalam project kita dan dan semua fiturnya dapat langsung kita pakai.
+
+Kita juga dapat mengkonfigurasi beberapa hal lain disini, seperti misalnya font yang ingin kita pakai, atau gambar yang ingin kita import dari asset. Jadi file ini adalah file yang akan sering kita ubah untuk urusan konfigurasi project.
+
+![Gambar 22. Struktur file pubspec.lock dan README.md](img/22%20struktur%20file%20pubspec%20lock%20dan%20readme%20md.PNG)
+
+Gambar 22. Struktur file pubspec.lock dan README.md
+
+Pubspec.lock adalah file yang dihasilkan secara otomatis berdasarkan file .yaml, dan ini hanya menyimpan lebih banyak detail tentang semua dependensi yang kita miliki di project flutter kita. Namun ini file yang bukan kita kerjakan.
+
+README.md ini bisa kita abaikan, bisa juga kita isi sebagai informasi tentang project yang sedang kita bangun. Jadi file ini dapat kita ubah sebagai informasi yang dapat berguna baik developer lain yang berhubungan dengan project flutter ini.
