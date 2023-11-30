@@ -284,7 +284,7 @@ Jadi sesungguhnya kita membuat aplikasi flutter kita ini menjadi widget tree, ya
 
 Sehingga apa yang kita lihat di layar adalah widget yang menampung widget lain.
 
-![Gambar 26. Class StatelessWidget](img/25%20class%20widget.PNG)
+![Gambar 26. Class Widget](img/25%20class%20widget.PNG)
 
 Gambar 26. Widget MyApp
 
@@ -293,3 +293,118 @@ Karena semua yang ada di flutter adalah widget, yuk sekarang waktunya kita membu
 Untuk membuat widget kita perlu membuat class widget adalah object, dan kita memerlukan class untuk membuat object.
 
 Jadi mari lihat class MyApp baris 7 diatas. Ini adalah contoh class yang nantinya akan menjadi object widget.
+
+![Gambar 27. Class StatelessWidget](img/27%20extends%20statelesswidget.PNG)
+
+Gambar 27. Class StatelessWidget
+
+Sekarang yang kita lihat adalah MyApp hanya menjadi sebuah class. Sedangkan widget yang benar-benar dapat kita lihat di layar bukanlah hal sepele untuk dibuat, karena pada akhirnya setiap pixel pada layar perlu kita kontrol.
+
+Disinilah tugas flutter. Flutter sudah memiliki fungsi-fungsi tersebut dibalik layar, jadi kita tidak perlu menulisnya sendiri. Kita hanya perlu menggunakan fitur yang disebut pewarisan (inheritance).
+
+Ini artinya kita akan membangun di atas class dasar, mendapatkan semua fitur dari class dasar tersebut dan hanya akan menambahkan fitur baru didalamnya.
+
+Cara pewarisan class yang sudah dibuat oleh flutter adalah dengan menambahkan kata kunci extends setelah nama class dan sebelum kurung kurawal dan memberitahu dart bahwa class ini akan mewarisi class lain dan kita hanya dapat memperluas atau mewarisi satu class dalam satu waktu.
+
+![Gambar 28. Pubspec.yaml](img/28%20pubspec%20yaml.PNG)
+
+Gambar 28. pubspec.yaml
+
+Terus bagaimana bisa kita menggunakan class dan library yang telah disediakan oleh flutter, jawabannya ada di pubspec.yaml.
+
+Di file ini, kita dapat melihat bahwa dependencies pertama yang secara default dibuat ketika membuat project flutter adalah dependencies ke sdk flutter. Dimana sdk ini letak nya ada di folder lain di luar project
+ini
+
+![Gambar 29. Menambahkan dependency](img/29%20menambahkan%20dependency.PNG)
+
+Gambar 29. Menambahkan dependency
+
+Dengan adanya dependencies sdk flutter, kita dapat menggunakan semua class class nya kedalam project kita untuk kita perluas lagi dengan cara meng extends class class tersebut.
+
+Di file ini pulalah nantinya kita dapat mendaftarkan package-package lain yang sudah disediakan oleh flutter ataupun yang dibuat oleh dev lain sudah di publish sebagai library yang dapat kita lihat di pub.dev
+
+Dalam penulisan package, perhatikan spasi, harus sejajar dengan packages flutter line 33.
+
+![Gambar 30. Method build](img/30%20method%20build.PNG)
+
+Gambar 30. Method build
+
+Setelah kita membuat class widget yang meng extends class stateless widget. Ada method yang wajib kita implement yaitu `build(BuildContex context)`
+
+Method ini wajib mengembalikan widget karena disini kita bekerja dengan widget flutter, seluruh aplikasi kita adalah widget.
+
+`BuildContext` sendiri adalah object khusus yang sudah disediakan oleh flutter lewat material.dart, dimana dia akan selalu membawa informasi meta tentang widget tersebut yang akan diteruskan ke build widget selanjutnya, dan informasi tersebut dapat digunakan oleh widget tree selanjutnya.
+
+Dalam contoh diatas widget build mengembalikan widget `MaterialApp()`
+
+![Gambar 31. Property home pada widget MaterialApp](img/31%20property%20home.PNG)
+
+Gambar 31. Property home pada widget MaterialApp
+
+Class widget kita yang kita beri nama MyApp membutuhkan kembalian berupa widget juga. Dan disini saya akan menggunakan widget MaterialApp untuk kembaliannya. MaterialApp ini adalah widget yang sudah disediakan oleh flutter melalui class
+material.dart.
+
+MaterialApp ini memiliki beberapa argumen yang dapat kita gunakan, janis argumennya adalah named argument. Seperti contoh disamping, saya menggunakan argument home untuk memasukan widget text yang bertuliskan Coding Flutter ke dalam widget MaterialApp yang nantinya akan diteruskan ke widget tree MyApp lalu di eksekusi dengan runApp dan akhirnya bisa tampil dilayar.
+
+![Gambar 31. Function RunApp](img/31%20runApp.png)
+
+Gambar 31. Function RunApp
+
+Untuk menyambungkan widget yang kita buat sampai dengan tampil dilayar, kita akan butuh function yang sudah disediakan oleh flutter melalui material.dart nya yaitu runApp().
+
+runApp sendiri function yang disediakan oleh flutter untuk menjalankan aplikasi flutter setelah aplikasi android atau ios di-boot. Alurnya dia akan mencoba mengambil widget tree yang kita buat, dan menggambarnya ke layar yang didasarkan pada widget tree tersebut. Jadi disini dia akan menggambar text Coding Flutter ke layar.
+
+MyApp didalam runApp harus berupa function dengan cara memberinya kurung buka kurung tutup, karena tanpa itu, MyApp akan hanya menjadi tipe data.
+
+![Gambar  32. Running App](img/32%20coding%20flutter.png)
+
+Gambar 32. Running App
+
+Ketika di running aplikasi flutter kita, tampilannya akan
+seperti ini.
+
+Dalam tahap ini kita baru memperlihatkan bagaimana text Coding Flutter yang sebelumnya berupa string, sekarang bisa tampil dilayar. Belum memperdulikan tampilan layar yang indah karena belum menambahkan widget lain selain widget Text().
+
+Dari hasil yang kita lihat, ini membuktikan bahwa fungsi dasar berjalan baik. Dengan alur widget MyApp yang kita buat dengan tambahan fitur yang disediakan oleh widget stateless berupa method build() diterima oleh fungsi utama untuk menjalankan aplikasi dengan bantuan runApp.
+
+![Gambar  33. Widget Scaffold](img/33%20scaffold.PNG)
+
+Gambar 33. Widget Scaffold
+
+Untuk mendapatkan tampilan yang lebih indah, kita dapat menggunakan widget lain yang sudah disediakan oleh flutter yaitu widget scaffold. Widget ini mempunyai beberapa argument, yang sering digunakan adalah argument appBar dan body.
+
+Disamping saya contohkan untuk menambahkan widget scaffold yang saya masukan kedalam argument home yang ada di MaterialApp, lalu di dalam scaffold terdapat appBar. Ini yang nantinya akan menjadi tampilan di bagian anah layar. Lalu terdapat juga body, ini nanti berisi content yang ingin kita kelola.
+
+![Gambar 34. Aplikasi berjalan](img/34%20aplikasi%20berjalan.png)
+
+Gambar 34. Aplikasi berjalan
+
+Hasil ketika kita jalankan akan seperti yang ada di atas ini.
+
+Terdapat appbar dengan title Coding Flutter, lalu untuk body nya sendiri masih berupa text dengan Text
+Coding Flutter bersama Teknik Informatika.
+
+Setelah ini kita akan belajar mengenal widget, ada widget yang visible dan invisible. Maksudnya bagaimana yuk lanjut ke bab selanjutnya.
+
+![Gambar 35. Visible dan invisible widget](img/35%20visible%20dan%20invisible%20widget.PNG)
+
+Gambar 35. Visible dan invisible widget
+
+Di bab sebelumnya sudah mengenal widget text, dimana hasilnya itu dapat dilihat dalam berupa text di layar.
+Diatas saya beri ilustrasi bahwa widget itu ada yang terlihat dan ada juga yang tidak terlihat. Baik yang terlihat maupun yang tidak terlihat kedua nya sama-sama penting.
+
+Widget yang terlihat akan memberikan UI dan UX yang baik bagi user. User dapat berinteraksi dengan aplikasi. Untuk widget yang tidak nampak seperti listview, column, row, ini adalah widget-widget penting yang fungsinya untuk mengatur widget tree supaya widget yang nampak dapat disusun dengan rapi.
+
+## Stateless Widget
+
+![Gambar 36. Diagram stateless widget](img/36%20diagram%20statelesswidget.PNG)
+
+Gambar 36. Diagram stateless widget
+
+Sebelum kita masuk ke stateless stateful pertama perlu tahu apa itu state ?
+
+State adalah data atau informasi yang digunakan aplikasi atau widget dalam aplikasi kita.
+
+State sendiri terbagi menjadi 2, yaitu app state dan local state. Stateless dan stateful ini masuk ke dalam local state.
+
+Stateless sendiri widget yang tidak memiliki state, sehingga perubahan dan hasil render UI nya itu ditentukan oleh inputan yang masuk kedalam stateless widget tersebut.
