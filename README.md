@@ -408,3 +408,112 @@ State adalah data atau informasi yang digunakan aplikasi atau widget dalam aplik
 State sendiri terbagi menjadi 2, yaitu app state dan local state. Stateless dan stateful ini masuk ke dalam local state.
 
 Stateless sendiri widget yang tidak memiliki state, sehingga perubahan dan hasil render UI nya itu ditentukan oleh inputan yang masuk kedalam stateless widget tersebut.
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text('Coding Flutter'),
+          ),
+          body: const ShowTextWidget(
+              text: 'Belajar Coding Flutter bersama Teknik Informatika UNISNU'),
+        ));
+  }
+}
+
+class ShowTextWidget extends StatelessWidget {
+  final String text;
+  const ShowTextWidget({super.key, required this.text});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(text);
+  }
+}
+```
+
+Seperti kode yang kita lihat di atas ini. Class ShowTextWidget ini extends ke StatelessWidget yang artinya UI akan dirender ketika class ini dipanggil oleh widget lain dengan inputan berupa string text. Jadi dia tidak memiliki state sendiri di dalam dirinya.
+
+## Stateful Widget
+
+![Gambar 37. Diagram Stateful Widget](img/37%20diagram%20statefullwidget.PNG)
+
+Gambar 37. Diagram Stateful Widget
+
+Untuk stateful dia adalah widget yang memiliki state didalamnya. Sehingga class yang meng extends class statefulwidget, akan dapat memiliki internal state nya sendiri, hal ini dapat menguntungkan karena render UI nya tidak hanya bergantung dari inputan dari widget lain, namun dengan memanggil setState maka widget build akan re-run ulang dengan state yang baru tanpa harus menunggu perubahan di widget tree atas nya.
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text('Coding Flutter'),
+          ),
+          body: const ChangeTimeWidget(),
+        ));
+  }
+}
+
+class ChangeTimeWidget extends StatefulWidget {
+  const ChangeTimeWidget({super.key});
+
+  @override
+  State<ChangeTimeWidget> createState() => _ChangeTimeWidgetState();
+}
+
+class _ChangeTimeWidgetState extends State<ChangeTimeWidget> {
+  DateTime time = DateTime.now();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text('Jam Sekarang: $time'),
+        ElevatedButton(
+          onPressed: () {
+            setState(() {
+              time = DateTime.now();
+            });
+          },
+          child: const Text('Perbarui Waktu'),
+        ),
+      ],
+    );
+  }
+}
+```
+
+Seperti class ChangeTextWidget di atas ini, dimana dia meng extends class StatefulWidget. Untuk susunan class nya seperti diatas. Class ini memiliki variable time dan valuenya dapat diganti ketika klik button, setelah itu text akan di set ulang menggunakan DateTime.now(), karena terdapat setState di situ, maka widget build akan di run ulang yang akhirnya menciptakan tampilan baru dengan data yang baru. Berikut hasilnya bila kita running dan klik button Perbarui Waktu.
+
+![Gambar 38. Contoh StatefulWidget](img/38%20example%20statefulwidget.png)
+
+Gambar 38. Contoh Tampilan Aplikasi Menggunakan StatefulWidget
